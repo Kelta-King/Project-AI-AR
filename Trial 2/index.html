@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Voice Controlled Notes App</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/shoelace-css/1.0.0-beta16/shoelace.css">
+        <link rel="stylesheet" href="styles.css">
+		<style>
+			.no-browser-support {
+    display: none;
+    font-size: 1.2rem;
+    color: #e64427;
+    margin-top: 35px;
+}
+
+		</style>
+    </head>
+    <body>
+        <div class="container">
+
+            <h1>Voice to speech App</h1>
+
+            <h3 class="no-browser-support" id="no-browser">Sorry, Your Browser Doesn't Support the Web Speech API. Try Opening This Demo In Google Chrome.</h3>
+
+            <div class="app" id="app"> 
+                <h3>Add New Note</h3>
+                <div class="input-single">
+                    <textarea id="note-textarea" placeholder="Your text will display here" rows="6"></textarea>
+                </div>         
+                <button id="start_record" title="Start Recording">Start Recognition</button>
+                <button id="pause_record" title="Pause Recording">Pause Recognition</button>
+				<div id="recording-instructions"></div>
+            </div>
+
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://code.responsivevoice.org/responsivevoice.js?key=enR4dReg"></script>
+        <script src="index.js"></script>
+
+    </body>
+</html>
+
+
