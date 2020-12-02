@@ -38,10 +38,31 @@ function runRecognition(){
                let confidence = event.results[0][0].confidence;
 		console.log("Text:",transcript,"Confidence",confidence*100,"%");
 		
-		let preMsg = prepareMsg(transcript);
-		let reply = replyMsg(preMsg);
+		if((similarity(transcript, "Open GitHub")*100) > 80){
+			console.log((similarity(transcript, "Open GitHub")*100));
+			responsiveVoice.speak("Opening GitHub","UK English Male", {onstart: null , onend:openGitHub});
 			
-		responsiveVoice.speak(reply,"UK English Male", parameters);
+			
+		}
+		else if((similarity(transcript, "Open Google")*100) > 80){
+			console.log((similarity(transcript, "Open GitHub")*100));
+			responsiveVoice.speak("Opening Google","UK English Male", {onstart: null, onend:openGoogle});
+			window.open("https://google.com", "_blank");
+			
+		}
+		else if((similarity(transcript, "Open ipl")*100) > 80){
+			console.log((similarity(transcript, "Open GitHub")*100));
+			responsiveVoice.speak("Opening ipl","UK English Male",{onstart: null, onend:openIpl});
+			window.open("https://ipl.com", "_blank");
+			
+		}
+		else{
+			let preMsg = prepareMsg(transcript);
+			let reply = replyMsg(preMsg);
+			
+			responsiveVoice.speak(reply,"UK English Male", parameters);
+		
+		}
 		
        };
 	   
@@ -67,6 +88,7 @@ init();
 
 function voiceStart(){
 	console.log("Voice start");
+	waveRightHand();
 }
 
 function voiceEnd(){
