@@ -12,7 +12,7 @@ function explain(){
 
 	document.querySelector('#right-hand').emit('explain-right-hand');
 	setTimeout(function(){
-	document.querySelector('#left-hand').emit('explain-left-hand');
+		document.querySelector('#left-hand').emit('explain-left-hand');
 	},1000);
 	
 }
@@ -35,10 +35,10 @@ function negationHead(){
 
 let parameters2 = {
 	onstart:waveLeftHand
-}
+};
 
 window.onload = function(){
 	
 	responsiveVoice.speak("Welcome to Jarvis!","UK English Male", parameters2);
 	
-}
+};
