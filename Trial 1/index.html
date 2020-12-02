@@ -36,16 +36,6 @@
 	<!--hands -->
 		<!-- left hand -->
 		<a-box id="left-hand" position='0.4 1.2 0' rotation="0 0 -50" scale='0.5 0.1 0.1' material='color: yellow;'>
-			<!--<a-animation
-				id="breath-hand-left"
-				attribute="position"
-				from="0.4 1.2 0"
-				to="0.4 1.18 0"
-				direction="alternate"
-				dur="500"
-				repeat="indefinite"
-				easing="ease">
-			</a-animation>-->
 			<a-animation
 				begin="explain-left-hand"
 				attribute="position"
@@ -67,23 +57,21 @@
 				easing="ease">
 			</a-animation>
 			<a-animation
-				begin="wave-left-hand"
 				attribute="rotation"
 				from="0 0 -50"
 				to="0 0 80"
 				direction="alternate"
 				dur="500"
-				repeat="1"
+				repeat="indefinite"
 				easing="ease">
 			</a-animation>
 			<a-animation
-				begin="wave-left-hand"
 				attribute="position"
 				from="0.4 1.2 0"
 				to="0.4 1.6 0"
 				direction="alternate"
 				dur="500"
-				repeat="1"
+				repeat="indefinite"
 				easing="ease">
 			</a-animation>
 		</a-box>
@@ -164,7 +152,7 @@
 			</a-animation> 
 			
 		</a-box>
-	 
+	
     </a-marker>
     <a-entity camera></a-entity>
 </a-scene>
@@ -175,7 +163,7 @@ function callfunctions(event){
 
 	if(event.keyCode == 72){
 		
-		explain();
+		waveLeftHand();
 		
 	}
 	
