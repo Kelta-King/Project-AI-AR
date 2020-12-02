@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>MDN Games: A-Frame demo</title>
+  <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+<script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+<script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js"></script>
+
+</head>
+<body>
+	<!-- HTML goes here -->
+<a-scene stats embedded arjs='trackingMethod: best; debugUIEnabled: false'>
+<a-marker preset="hiro">
+<a-box
+  color="#0095DD"
+  position="0 1 0"
+  rotation="20 40 0">
+	<a-animation
+		attribute="rotation"
+		from="20 0 0"
+		to="20 360 0"
+		direction="alternate"
+		dur="4000"
+		repeat="indefinite"
+		easing="ease">
+  </a-animation>
+</a-box>
+</a-marker>
+<a-entity camera></a-entity>
+</a-scene>
+</body>
+</html>
