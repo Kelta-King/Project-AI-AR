@@ -1,3 +1,4 @@
+
 let context; //for web audio
 let rec_btn = document.getElementById("mobile-rec");
 
@@ -6,6 +7,7 @@ let parameters = {
 	onstart:voiceStart,
 	onend:voiceEnd
 };
+
 document.addEventListener("keydown", function(event){
 	
 	if(event.keyCode == 76){
@@ -56,6 +58,11 @@ function runRecognition(){
 			window.open("https://ipl.com", "_blank");
 			
 		}
+		else if((similarity(transcript, "Dance please")*100) > 80){
+			console.log((similarity(transcript, "Open GitHub")*100));
+			responsiveVoice.speak("Ok, I will dance for you, music!!!","UK English Male",{onstart: null, onend:startDance});
+			
+		}
 		else{
 			let preMsg = prepareMsg(transcript);
 			let reply = replyMsg(preMsg);
@@ -69,6 +76,45 @@ function runRecognition(){
 	recognition.start();
 	
 }
+
+//let music  = document.getElementById("music");
+music = new Audio("Assets/Audio/crazy-frog-117-1-43962-[AudioTrimmer.com].mp3");
+
+function startDance(){
+	
+	music.src = "Assets/Audio/crazy-frog-117-1-43962-[AudioTrimmer.com].mp3";
+	window.focus();
+	music.play();
+	
+	let i = 0;
+		
+	let yo = setInterval(function(){
+	
+		i++;
+		danceHead();
+		if(i%5 == 0){
+			waveLeftHand();
+			waveRightHand();
+		}
+		if(i%2 == 0){
+			danceLeftLeg();
+		}
+		else{
+			danceRightLeg();
+		}
+			
+		if(i >= 52){
+			music.pause();
+			clearInterval(yo);
+		}
+	
+	}, 500);
+
+}
+
+music.onplay = function() {
+	console.log("Music has started to play");
+};
 
 function init() {
     
