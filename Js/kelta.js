@@ -42,21 +42,16 @@ function runRecognition(){
 		
 		if((similarity(transcript, "Open GitHub")*100) > 80){
 			console.log((similarity(transcript, "Open GitHub")*100));
-			responsiveVoice.speak("Opening GitHub","UK English Male", {onstart: null , onend:openGitHub});
-			
+			responsiveVoice.speak("Opening GitHub","UK English Male", {onstart: null , onend:openGitHub});			
 			
 		}
 		else if((similarity(transcript, "Open Google")*100) > 80){
 			console.log((similarity(transcript, "Open GitHub")*100));
-			responsiveVoice.speak("Opening Google","UK English Male", {onstart: null, onend:openGoogle});
-			window.open("https://google.com", "_blank");
-			
+			responsiveVoice.speak("Opening Google","UK English Male", {onstart: null, onend:openGoogle});			
 		}
 		else if((similarity(transcript, "Open ipl")*100) > 80){
 			console.log((similarity(transcript, "Open GitHub")*100));
 			responsiveVoice.speak("Opening ipl","UK English Male",{onstart: null, onend:openIpl});
-			window.open("https://ipl.com", "_blank");
-			
 		}
 		else if((similarity(transcript, "Dance please")*100) > 80){
 			console.log((similarity(transcript, "Open GitHub")*100));
@@ -64,16 +59,62 @@ function runRecognition(){
 			
 		}
 		else{
-			let preMsg = prepareMsg(transcript);
-			let reply = replyMsg(preMsg);
 			
-			responsiveVoice.speak(reply,"UK English Male", parameters);
+			if(transcript.includes("email") && transcript.includes("message")){
+				//demo string
+				//email anubhav message hey anumbhav
+				let str = transcript.split(" ");
+				//now we have each words
+				//str[3] is name and after 6 is message
+				let name = str[1];
+				let message = "";
+				
+				for(let i = 3; i<str.length;i++){
+					
+					message += str[i];
+					
+				}
+				
+				let parameterYes = {
+					onstart: affermationHead,
+					onend:sendMail(name, message)
+				}
+				responsiveVoice.speak("Yes sure.","UK English Male", parameterYes);
+				var xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function() {
+					if (this.readyState == 4 && this.status == 200) {
+						document.getElementById("demo").innerHTML = this.responseText;
+					}
+				};
+				xhttp.open("GET", "ajax_info.txt", true);
+				xhttp.send();
+			}
+			else if(transcript.includes("message") && !transcript.includes("email")){
+				let parameterNo = {
+					onstart:negationHead,
+					onend:null
+				}
+				responsiveVoice.speak("Maybe I did not hear the name or message. Can you please repeat","UK English Male", parameterNo);
+			}
+			else{
+				let preMsg = prepareMsg(transcript);
+				let reply = replyMsg(preMsg);
+			
+				responsiveVoice.speak(reply,"UK English Male", parameters);
 		
+			}
+			
 		}
 		
        };
 	   
 	recognition.start();
+	
+}
+
+function sendMail(name, message){
+	
+	console.log("here");
 	
 }
 
