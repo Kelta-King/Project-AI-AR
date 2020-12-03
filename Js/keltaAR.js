@@ -1,3 +1,4 @@
+
 function dance(){
 	
 	waveLeftHand();
@@ -15,6 +16,17 @@ function explain(){
 		document.querySelector('#left-hand').emit('explain-left-hand');
 	},1000);
 	
+}
+
+function danceLeftLeg(){
+	document.querySelector('#left-leg').emit('dance-left-leg');
+}
+
+function danceRightLeg(){
+	document.querySelector('#right-leg').emit('dance-right-leg');
+}
+function danceHead(){
+	document.querySelector('#head').emit('dance-head');
 }
 
 function waveLeftHand(){
