@@ -51,6 +51,6 @@ let parameters2 = {
 
 window.onload = function(){
 	
-	responsiveVoice.speak("Welcome to Jarvis!","UK English Male", parameters2);
+	responsiveVoice.speak("Welcome to Jarvis! I will be in service for you here.","UK English Male", parameters2);
 	
 };
