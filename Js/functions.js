@@ -62,3 +62,39 @@ function openGitHub(){
 function openIpl(){
 	window.open("https://ipl.com", "_blank");
 }
+
+class sound
+{
+       sound;
+	
+       constructor(src){
+               this.sound=document.createElement('audio');
+               this.sound.src=src;
+               this.sound.setAttribute("preload","auto");
+               this.sound.setAttribute("controls","none");
+               this.sound.style.display="none";
+       }
+       
+	play(){
+               this.sound.play();
+       }
+       
+	stop(){
+		this.sound.pause();
+       }
+	
+        decVol(){
+              	if(this.volume>=0)
+              {
+             		this.volume-=20;
+              }
+       }
+       
+       incVol(){
+		
+		if(this.volume<=100)
+               {
+               	this.volume+=20;
+               }
+       }
+}	
