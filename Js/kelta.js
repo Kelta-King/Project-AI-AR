@@ -58,6 +58,13 @@ function runRecognition(){
 			responsiveVoice.speak("Ok, I will dance for you, music!!!","UK English Male",{onstart: null, onend:startDance});
 			
 		}
+		else if((similarity(transcript, "Open snake game") * 100) > 80){
+		responsiveVoice.speak("Ok, Opening snake game!!!", "UK English Male", { onstart: null, onend: window.open("https://kelta-king.github.io/Snake-Game/", "_blank") });
+
+	}else if((similarity(transcript, "Open dude run game") * 100) > 80){
+		responsiveVoice.speak("Ok, Opening dude run game!!!", "UK English Male", { onstart: null, onend: window.open("https://kelta-king.github.io/Dude-Run/", "_blank") });
+
+	}
 		else{
 			
 			if(transcript.includes("email") && transcript.includes("message")){
