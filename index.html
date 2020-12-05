@@ -23,12 +23,12 @@
 <a-scene embedded arjs='trackingMethod: best; debugUIEnabled: false'>
 	<a-marker preset="hiro">
 		<!--body -->
-		<a-box position='0 1 0' scale='0.6 0.8 0.5' material='color: red;'>
+		<a-box position='0 3 0' scale='1.8 2.4 1.5' material='color: red;'>
 			<a-animation
 				id="breath"
 				attribute="position"
-				from="0 1 0"
-				to="0 0.98 0"
+				from="0 3 0"
+				to="0 2.98 0"
 				direction="alternate"
 				dur="500"
 				repeat="indefinite"
@@ -38,7 +38,7 @@
 	
 	<!--legs -->
 		<!-- left leg -->
-		<a-cylinder id="left-leg" position='0.2 0.1 0' rotation="0 0 0" scale='0.1 1 0.1' material='color:green;'>
+		<a-cylinder id="left-leg" position='0.6 0.3 0' rotation="0 0 0" scale='0.3 3 0.3' material='color:green;'>
 			<a-animation
 				begin="dance-left-leg"
 				attribute="position"
@@ -61,7 +61,7 @@
 			</a-animation>
 		</a-cylinder>
 		<!-- right leg -->
-		<a-cylinder id="right-leg" position='-0.2 0.1 0' rotation="0 0 0" scale='0.1 1 0.1' material='color: green;'>
+		<a-cylinder id="right-leg" position='-0.6 0.3 0' rotation="0 0 0" scale='0.3 3 0.3' material='color: green;'>
 			<a-animation
 				begin="dance-right-leg"
 				attribute="position"
@@ -86,7 +86,7 @@
 	
 	<!--hands -->
 		<!-- left hand -->
-		<a-box id="left-hand" position='0.4 1.2 0' rotation="0 0 -50" scale='0.5 0.1 0.1' material='color: yellow;'>
+		<a-box id="left-hand" position='1.2 3.6 0' rotation="0 0 -50" scale='1.5 0.3 0.3' material='color: yellow;'>
 			<a-animation
 				begin="explain-left-hand"
 				attribute="position"
@@ -129,7 +129,7 @@
 			</a-animation>
 		</a-box>
 		<!-- right hand -->
-		<a-box id="right-hand" position='-0.4 1.2 0' rotation="0 0 50" scale='0.5 0.1 0.1' material='color: yellow;'>
+		<a-box id="right-hand" position='-1.2 3.6 0' rotation="0 0 50" scale='1.5 0.3 0.3' material='color: yellow;'>
 			<!--<a-animation
 				id="breath-hand-right"
 				attribute="position"
@@ -182,7 +182,7 @@
 			</a-animation>
 		</a-box>
 	<!--head -->
-		<a-box id="head" position='0 1.5 0' rotation="-20 0 0" scale='0.3 0.3 0.3' material='color: blue;'>
+		<a-box id="head" position='0 4.5 0' rotation="-20 0 0" scale='0.9 0.9 0.9' material='color: blue;'>
 			<a-animation
 				begin="affermation-head"
 				attribute="rotation"
