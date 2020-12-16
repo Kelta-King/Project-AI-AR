@@ -1,7 +1,7 @@
 # Project-AI-AR
 This repository is about the Augmented reality in web with AI. 
 It is an AR-chatbot which is created in JavaScript. 
-Preview of my friend... The bot :star_struck:
+Her is the preview of my friend... The bot :star_struck:
 <p align='center'>
 <img src='https://github.com/Kelta-King/Project-AI-AR/blob/main/Assets/Audio/welcomeGif.gif' height='300'>
 </p>
@@ -12,6 +12,13 @@ Preview of my friend... The bot :star_struck:
 - Can send Whatsapp messages.
 - Talk to you.
 - Dance for you.
+
+You need [Hero marker](https://commons.wikimedia.org/wiki/File:Hiro_marker_ARjs.png) to access this bot in your camera. Here is an image of Hero marker.
+
+<p align='center'>
+<img src='https://github.com/AnubhavMadhav/J.A.R.V.I.S/blob/master/hiro.jpeg' height="300">
+</p>
+
 
 It is the AR part repository of our SDP project. The main repository link is... [J.A.R.V.I.S](https://github.com/AnubhavMadhav/J.A.R.V.I.S)
 
