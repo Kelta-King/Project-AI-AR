@@ -39,4 +39,4 @@ Currently it is working in Google chrome but we will develop it more in future.
 <img src='https://github.com/Kelta-King/Project-AI-AR/blob/main/Assets/Audio/ARbot1.jpeg' height='300'>
 </p>
 
-I hope you like it. :star: this repo it if you like.
+I hope you like it. :star: star this repo if you like.
